@@ -11,14 +11,22 @@ import (
 )
 
 type Result struct {
-	Warning  Warning  `xml:"aviso"`
-	Forecast Forecast `xml:"prediccion"`
-	Trend    Trend    `xml:"tendencia"`
+	Warning   Warning   `xml:"aviso"`
+	Situation Situation `xml:"situacion"`
+	Forecast  Forecast  `xml:"prediccion"`
+	Trend     Trend     `xml:"tendencia"`
 }
 
 type Warning struct {
 	End  Date   `xml:"fin"`
 	Text string `xml:"texto"`
+}
+
+type Situation struct {
+	Name  string `xml:"nombre,attr"`
+	Start Date   `xml:"inicio"`
+	End   Date   `xml:"fin"`
+	Text  string `xml:"texto"`
 }
 
 type Forecast struct {
@@ -46,7 +54,6 @@ func getXML(url string) (Result, error) {
 	if err != nil {
 		return Result{}, err
 	}
-
 
 	defer res.Body.Close()
 	if res.StatusCode != 200 {
@@ -92,9 +99,19 @@ func (d Date) formatDate() string {
 
 func (w Warning) formatText() string {
 	return fmt.Sprintf(
-		"<u><b>Avisos válidos hasta el %v</b></u>\n\n%v",
+		"<u><b>Avisos válidos hasta el %v</b></u>\n\n%v\n\n\n",
 		w.End.formatDate(),
 		w.Text,
+	)
+}
+
+func (s Situation) formatText() string {
+	return fmt.Sprintf(
+		"<u><b>%v</b></u>\n\nFecha de inicio: %v\nFecha de fin: %v\n\n%v\n\n\n",
+		s.Name,
+		s.Start.formatDate(),
+		s.End.formatDate(),
+		s.Text,
 	)
 }
 
@@ -110,7 +127,7 @@ func (f Forecast) formatText() string {
 
 		if len(zone.SubZones) == 1 {
 			forecastText += fmt.Sprintf(
-				"%v\n\n\n",
+				"%v\n\n",
 				zone.SubZones[0].Text,
 			)
 		} else {
@@ -138,8 +155,11 @@ func (t Trend) formatText() string {
 
 func (r Result) formatText() string {
 	return fmt.Sprintf(
-		"%v\n\n\n\n%v",
+		"%v%v%v\n%v%v",
 		r.Warning.formatText(),
+		r.Situation.formatText(),
 		r.Forecast.formatText(),
+		r.Trend.formatText(),
+		"© AEMET",
 	)
 }

@@ -1,7 +1,9 @@
 name: Go
 on:
   schedule:
-    - cron:  '5 * * * *'
+    - cron:  '5 10 * * *'
+    - cron:  '5 18 * * *'
+    - cron:  '50 18 * * *'
 jobs:
 
   bot:
@@ -20,7 +22,7 @@ jobs:
 
       - name: Get dependencies
         run: |
-          go get -v -t -d ./...
+          go get -v -d ./...
 
       - name: Run
         run: env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER }} XML_ID=${{ secrets.XML_ID }} go run scraper.go main.go
