@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<root id="FQXX44" nombre="Boletí­n meteorológico y marino para las zonas costeras de la Comunidad Autónoma de Illes Balears" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="prediccion_mar.xsd">
+  <origen>
+    <productor>Agencia Estatal de Meteorología - AEMET - Gobierno de España</productor>
+    <web> http://www.aemet.es</web>
+    <language>es</language>
+    <copyright>© AEMET. Autorizado el uso de la información y su reproducción citando a AEMET como autora de la misma.</copyright>
+    <nota_legal>http://www.aemet.es/es/nota_legal</nota_legal>
+    <elaborado>2020-06-07T20:00:00</elaborado>
+    <inicio>2020-06-07T20:00:00</inicio>
+    <fin>2020-06-08T20:00:00</fin>
+  </origen>
+  <aviso id="A807" nombre="Avisos para Illes Balears">
+    <inicio>2020-06-07T20:00:00</inicio>
+    <fin>2020-06-08T20:00:00</fin>
+    <texto>Posibilidad de aguaceros y tormentas muy fuertes.</texto>
+  </aviso>
+  <situacion id="S807" nombre="Situación General Illes Balears">
+    <analisis>2020-06-07T12:00:00</analisis>
+    <inicio>2020-06-07T20:00:00</inicio>
+    <fin>2020-06-08T20:00:00</fin>
+    <texto>Baja de 1004 en el norte de Italia rellenándose y baja de 1006 en Baleares rellenándose y desplazándose hacia el nordeste. Alta de 1026 en Azores casi estacionaria.</texto>
+  </situacion>
+  <prediccion>
+    <inicio>2020-06-07T20:00:00</inicio>
+    <fin>2020-06-08T20:00:00</fin>
+    <zona id="8040730" nombre="Aguas costeras de Menorca">
+      <subzona id="8040731" nombre="Norte de Menorca">
+        <texto>N y NE 4 a 5 amainando a 3 el lunes por la tarde. Marejada disminuyendo a marejadilla. Mar de fondo del N de 1 m aumentando a 2. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+      <subzona id="8040732" nombre="Sur de Menorca">
+        <texto>N y NE 4 a 5 amainando a E y NE 3 el lunes por la tarde. Marejada disminuyendo a marejadilla. Mar de fondo del SW de 1 m girando a N. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040740" nombre="Canal de Menorca">
+      <subzona id="8040740" nombre="Canal de Menorca">
+        <texto>NE 4 a 5 amainando a 3 el lunes por la tarde. Marejada a fuerte marejada disminuyendo a marejadilla con mar de fondo del N de 1 m. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040710" nombre="Aguas costeras de Mallorca">
+      <subzona id="8040711" nombre="Noroeste de Mallorca (de Dragonera a Formentor)">
+        <texto>NE 4 a 5 amainando a variable 2 a 3 al final. Marejada a fuerte marejada. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+      <subzona id="8040712" nombre="Nordeste de Mallorca (de Formentor a Capdepera)">
+        <texto>N y NE 4 a 5 amainando a 3 el lunes por la tarde. Marejada a fuerte marejada disminuyendo a marejadilla con mar de fondo del N de 1 m. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+      <subzona id="8040713" nombre="Este de Mallorca (de Capdepera a Salinas)">
+        <texto>NE 3 a 5. Marejada. Mar de fondo del SW de 1 m girando por la mañana a N. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+      <subzona id="8040714" nombre="Sur de Mallorca (de Salinas a Dragonera)">
+        <texto>E y NE 3 a 4. Marejadilla a marejada. Mar de fondo del SW de 1 m. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040760" nombre="Aguas costeras de Cabrera">
+      <subzona id="8040760" nombre="Aguas costeras de Cabrera">
+        <texto>E y NE 3 a 4. Marejadilla o marejada. Mar de fondo del SW de 1 a 2 m. Aguaceros y tormentas ocasionales.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040720" nombre="Canal de Mallorca">
+      <subzona id="8040720" nombre="Canal de Mallorca">
+        <texto>E y NE 3 a 5. Marejadilla o marejada. Mar de fondo del SW de 1 m. Aguaceros y tormentas.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040770" nombre="Aguas costeras de Ibiza">
+      <subzona id="8040770" nombre="Aguas costeras de Ibiza">
+        <texto>N 4 a 6 temporalmente variable 2 a 4. Marejadilla a fuerte marejada. Mar de fondo del SW de 1 m. Aguaceros y tormentas.</texto>
+      </subzona>
+    </zona>
+    <zona id="8040780" nombre="Aguas costeras de Formentera">
+      <subzona id="8040780" nombre="Aguas costeras de Formentera">
+        <texto>N 3 a 5 temporalmente variable 2 a 3. Marejadilla o marejada. Mar de fondo del SW de 1 m. Aguaceros y tormentas.</texto>
+      </subzona>
+    </zona>
+  </prediccion>
+  <tendencia>
+    <inicio>2020-06-08T20:00:00</inicio>
+    <fin>2020-06-09T20:00:00</fin>
+    <texto>No se esperan condiciones de aviso en ninguna zona</texto>
+  </tendencia>
+</root>
