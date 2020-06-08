@@ -1,10 +1,10 @@
-name: Bot
+name: Go
 on:
   schedule:
-    - cron:  '30 * * * *'
+    - cron:  '35 * * * *'
 jobs:
 
-  test:
+  bot:
     name: Bot
     runs-on: ubuntu-latest
     steps:
