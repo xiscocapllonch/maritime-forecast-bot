@@ -1,7 +1,7 @@
-name: Go
+name: Bot
 on:
   schedule:
-    - cron:  '0 * * * *'
+    - cron:  '30 * * * *'
 jobs:
 
   test:
@@ -23,4 +23,4 @@ jobs:
           go get -v -t -d ./...
 
       - name: Run
-        run: go run scraper.go main.go
+        run: env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER }} XML_ID=${{ secrets.XML_ID }} go run scraper.go main.go
