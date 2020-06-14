@@ -24,6 +24,4 @@ jobs:
         run: go test -v
 
       - name: Run
-        run: |
-          env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER_TEST }} XML_ID=${{ secrets.XML_ID }}
-          go run forecast.go main.go
+        run: env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER_TEST }} XML_ID=${{ secrets.XML_ID }} go run forecast.go main.go
