@@ -1,4 +1,4 @@
-module aemet
+module github.com/xiscocapllonch/maritime-forecast-bot
 
 go 1.14
 

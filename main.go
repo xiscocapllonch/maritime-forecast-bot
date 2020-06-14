@@ -12,15 +12,13 @@ func main() {
 		log.Panic(err)
 	}
 
-	result, err := getXML("http://www.aemet.es/xml/maritima/" + os.Getenv("XML_ID") + ".xml")
+	result, err := GetForecast(os.Getenv("XML_ID"))
 
 	if err != nil {
 		log.Panic(err)
 	}
 
-	text := result.formatText()
-
-	config := tgbotapi.NewMessageToChannel(os.Getenv("CHANNEL_USER"), text)
+	config := tgbotapi.NewMessageToChannel(os.Getenv("CHANNEL_USER"), result)
 	config.ParseMode = "html"
 
 	_, err = bot.Send(config)

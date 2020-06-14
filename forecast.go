@@ -163,3 +163,13 @@ func (r Result) formatText() string {
 		"© AEMET",
 	)
 }
+
+func GetForecast(xmlId string) (string, error) {
+	result, err := getXML("http://www.aemet.es/xml/maritima/" + xmlId + ".xml")
+
+	if err != nil {
+		return "", err
+	}
+
+	return result.formatText(), nil
+}

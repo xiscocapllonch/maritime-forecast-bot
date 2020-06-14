@@ -3,7 +3,6 @@ on:
   schedule:
     - cron:  '5 10 * * *'
     - cron:  '5 18 * * *'
-    - cron:  '50 18 * * *'
 jobs:
 
   bot:
@@ -25,4 +24,4 @@ jobs:
           go get -v -d ./...
 
       - name: Run
-        run: env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER }} XML_ID=${{ secrets.XML_ID }} go run scraper.go main.go
+        run: env BOT_TOKEN=${{ secrets.BOT_TOKEN }} CHANNEL_USER=${{ secrets.CHANNEL_USER }} XML_ID=${{ secrets.XML_ID }} go run forecast.go main.go
