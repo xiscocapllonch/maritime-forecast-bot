@@ -22,25 +22,25 @@ jobs:
           go get -v -d ./...
 
       - name: Test custom
-        run: $BOT_TOKEN $BOT_CHANNEL_ID go run main.go custom --customMsg="my custom message"
+        run: go run main.go custom --customMsg="my custom message"
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test forecast
-        run: $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecast --xmlId=${{ secrets.XML_ID }}
+        run: go run main.go forecast --xmlId=${{ secrets.XML_ID }}
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test waves map
-        run: $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="false"
+        run: go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="false"
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test wind map
-        run: $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="true"
+        run: go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="true"
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
