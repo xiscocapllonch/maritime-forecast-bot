@@ -5,7 +5,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    environment:
+    env:
       - BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       - BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
