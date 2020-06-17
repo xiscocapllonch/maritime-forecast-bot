@@ -5,9 +5,6 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    env:
-      - BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      - BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
     steps:
 
@@ -26,12 +23,24 @@ jobs:
 
       - name: Test custom
         run: env $BOT_TOKEN $BOT_CHANNEL_ID go run main.go custom --customMsg="my custom message"
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test forecast
         run: env $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecast --xmlId=${{ secrets.XML_ID }}
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test waves map
         run: env $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="false"
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
 
       - name: Test wind map
         run: env $BOT_TOKEN $BOT_CHANNEL_ID go run main.go forecastMap --zoneId=${{ secrets.ZONE_ID }} --wind="true"
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          BOT_CHANNEL_ID: ${{ secrets.BOT_CHANNEL_ID_TEST }}
